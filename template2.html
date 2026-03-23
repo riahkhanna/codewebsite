@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catering</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+body {
+    margin: 0;
+    font-family: Arial, serif;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: black;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.navbar .links a {
+    text-decoration: none;
+    color: lightblue;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.menu-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px;
+}
+
+.menu-text {
+  width: 50%;
+}
+
+.menu-image {
+  width: 50%;
+}
+
+.menu-image img {
+  width: 100%;
+  height: 600px;
+  display: block;
+}
+
+
+.contact-section {
+    padding: 60px;
+}
+
+.contact-section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    max-width: 800px;
+    color: #444;
+}
+
+.contact-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    padding: 12px;
+    border: none;
+    background: #444;
+    color: white;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+
+    
+    <nav class="navbar">
+        <div class="logo">Catering</div>
+        <div class="links">
+            <a href="#about">About</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <img src="https://tse1.explicit.bing.net/th/id/OIP.Y7NI-R6zrdJG1wvKESGZyAHaDz?rs=1&pid=ImgDetMain&o=7&rm=3"alt="Sample Image" width="100%" height="800px">
+
+       <div class="menu-section">
+
+  <div class="menu-text">
+    <h2>Our Menu</h2>
+
+    <h4>Bread Basket</h4>
+    <p>Fresh baked fruit breads and muffins 5.50</p>
+
+    <h4>Honey Almond Granola with Fruits</h4>
+    <p>Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p>
+
+    <h4>Belgian Waffle</h4>
+    <p>Vanilla flavored batter with malted flour 7.50</p>
+
+    <h4>Scrambled Eggs</h4>
+    <p>Eggs with roasted red pepper and garlic 7.50</p>
+
+    <h4>Blueberry Pancakes</h4>
+    <p>With syrup, butter and berries 8.50</p>
+  </div>
+
+  <div class="menu-image">
+    <img src="https://www.w3schools.com/w3images/tablesetting.jpg" alt="food">
+  </div>
+    </div>
+
+    <div id="contact" class="contact-section">
+
+        <h2>Contact</h2>
+        <p>We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggest criteria of them all — both look and taste.</p>
+        <p><b>Catering Service, 42nd Living St, 43043 New York, NY</b></p>
+        <form class="contact-form">
+            <input type="text" placeholder="Name">
+            <input type="number" placeholder="How many people">
+            <input type="text" placeholder="Message / Special requirements">
+            <button>SEND MESSAGE</button>
+        </form>
+
+    </div>
+
+</body>
+</html>
