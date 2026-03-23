@@ -1,137 +1,112 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
     <head>
-        <title>Template4</title>
-        <style>
-
- body {
-             margin: 0;
-             font-family: Arial, sans-serif;
+        <title>grid example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body, h1 {
+      font-family: "Montserrat", monospace;
+      margin: 0;
+      padding: 0;
     }
-/* Style the navbar */
-             #navbar 
-    {
-             position: sticky;
-              top: 0;
-                 overflow: hidden;
-             background-color: #333;
-     }
- /* Navbar links */
-        #navbar a
-    {
-        float: left;
-        display: block;
-            color: #f2f2f2;
-        text-align: center;
-        padding: 14px;
-        text-decoration: none;
-     }
-     /* Page content */
-        content
-     {
-        padding: 16px;
-     }
- /* Page content */
-        content 
-    {
-        padding: 16px;
-     }
- /* Change color on hover */
-        #navbar a:hover 
-    {
-         background-color: #ddd;
-         color: black;
+    header {
+      text-align: center;
+      margin: 40px 0;
     }
-        body
-     {
-        margin: 0;
-        background: #f1f1f1;
-        font-family: Arial, sans-serif;
-     }
-
-        .container 
-    {
-        max-width: 1200px;
-        margin: auto;
-        background: white;
-     }
-    .nav 
-    {
-      display: flex;
-      justify-content: space-between;
-      padding: 15px 30px;
+    header h1 {
+      font-weight: bold;
+    }
+    .menu-btn {
+      float: right;
       background: white;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
     }
-     .nav a 
-    {
-     text-decoration: none;
-     color: black;
-     margin-left: 20px;
-     }
-
-     .hero 
-     {
-      position: relative;
-      }
-     .hero img
-     {
+    .grid {
+      display: flex;
+      gap: 16px;
+      margin: 40px auto;
+      max-width: 1200px;
+    }
+    .grid-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .grid-column img {
       width: 100%;
-      height: 90vh;
-      object-fit: cover;
-     }
-        .hero-text 
-        {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 36px;
-        }
-    flex-container2 
-    {
-    display:flex;
-    flex-direction:row;
-    width: 100%;
-    height: 400px;
+      display: block;
     }
-    .flex-item2 
-    {
-    background-color: cornflowerblue;
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-    font-size: 30px;
-    color: white;
-    text-align: left;
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #f0f0f0;
+      margin-top: 40px;
+      font-size: 1.5rem;
     }
-    img 
-    {
-    margin: 5px;
+    footer i {
+      margin: 0 8px;
+      cursor: pointer;
     }
-
-</style>
+    footer i:hover {
+      opacity: 0.7;
+    }
+  </style>
 </head>
 <body>
-       <div id="navbar">
- <a href="#home">Home</a>
- <a href="#about">About</a>
- <a href="#contact">Contact</a>
+  <div class="sidebar" id="mySidebar">
+ 
+  </div>
+  <header>
+    <button class="menu-btn" onclick="openSidebar()"><i class="fa fa-bars"></i></button>
+    <h1>PHOTOLIO</h1>
+    <p>A simple template for photographers.</p>
+    <button onclick="toggleGrid()">Toggle Grid Padding</button>
+  </header>
+  <div class="grid" id="myGrid">
+  <div class="grid-column">
+    <img src="https://www.w3schools.com/w3images/coffee.jpg" alt="Coffee">
+    <img src="https://www.w3schools.com/w3images/bridge.jpg" alt="Bridge">
+    <img src="https://www.w3schools.com/w3images/mist.jpg" alt="Mist">
+    <img src="https://www.w3schools.com/w3images/london.jpg" alt="London">
+    <img src="https://www.w3schools.com/w3images/woods.jpg" alt="Woods">
+    <img src="https://www.w3schools.com/w3images/woods.jpg" alt="Woods">
+     <img src="https://www.w3schools.com/w3images/workshop.jpg" alt="workshop"
+     <img src=" https://www.w3schools.com/w3images/skies.jpg" alt="skies">
+     <img src="https://www.w3schools.com/w3images/skies.jpg" alt="skies">
+  </div>
+  <div class="grid-column">
+    <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Nature">
+    <img src="https://www.w3schools.com/w3images/avatar_g.jpg" alt="Avatar">
+    <img src="https://www.w3schools.com/w3images/bridge.jpg" alt="Bridge">
+    <img src="https://www.w3schools.com/w3images/workshop.jpg" alt="Workshop">
+    <img src="https://www.w3schools.com/w3images/gondol.jpg" alt="Gondola">
+    <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Nature">
+  </div>
+  <div class="grid-column">
+    <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Lights">
+    <img src="https://www.w3schools.com/w3images/sound.jpg" alt="Sound">
+    <img src="https://www.w3schools.com/w3images/woods.jpg" alt="Woods">
+    <img src="https://www.w3schools.com/w3images/skies.jpg" alt="Skies">
+    <img src="https://www.w3schools.com/w3images/london.jpg" alt="London">
+    <img src="https://www.w3schools.com/w3images/avatar_g.jpg" alt="Avatar">
+    <img src="https://www.w3schools.com/w3images/sound.jpg" alt="sound">
+  </div>
 </div>
-         </div>
-        </div>
-        <div class="hero">
-        <img src="https://www.w3schools.com/w3images/jane.jpg" alt="Woman in black top and white skirt standing against weathered industrial metal wall with rust and peeling paint, wearing sunglasses, contemplative pose">
-        </div>
-        <div class="flex-container2">
-    <img src="https://www.w3schools.com/w3images/jane.jpg" alt="Jane">  
-        <div class="flex-item2">1</div>
-
-        <div class="flex-item2">2</div>
-
-        <div class="flex-item2">3</div>
-
-        <div class="flex-item2">4</div
-
+  </div>
+ <footer>
+  <i class="fa fa-facebook-official"></i>
+  <i class="fa fa-instagram"></i>
+  <i class="fa fa-snapchat"></i>
+  <i class="fa fa-pinterest-p"></i>
+  <i class="fa fa-twitter"></i>
+  <i class="fa fa-linkedin"></i>
+    <p>BY RIAH KHANNA</p>
+  </footer>
 </body>
 </html>

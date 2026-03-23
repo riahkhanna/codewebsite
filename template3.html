@@ -1,260 +1,237 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Template3</title>
-        <style>
-         body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Template3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  border-right: 1px solid #eee;
+  z-index: 1000;
+  overflow-y: auto;
 }
-.nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 30px;
-  background: white;
+
+.sidebar-header {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
-.nav a {
-  text-decoration: none;
-  color: black;
-  margin-left: 20px;
-}
-.hero {
-  position: relative;
-}
-.hero img {
+
+.menu a,
+.dropdown-btn {
+  display: block;
   width: 100%;
-  height: 90vh;
+  padding: 12px 20px;
+  color: #666;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  background: none;
+  text-align: left;
+}
+
+.menu a:hover,
+.dropdown-btn:hover {
+  background: #f5f5f5;
+}
+
+.submenu {
+  display: none;
+  padding-left: 20px;
+}
+
+.submenu a {
+  font-weight: normal;
+}
+
+
+body {
+  margin-left: 250px;
+}
+
+.hero-img {
+  height: 700px;
   object-fit: cover;
 }
+
 .hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 36px;
+  text-align: left;
 }
 
-.box {
-  background: black;
-  padding: 8px 12px;
-  margin-right: 10px;
-}
-.flex-container2 {
-
-    display:flex;
-    flex-direction:row;
-    width: 100%;
-    height: 400px;
-    }
-    .flex-item2 {
-    background-color: cornflowerblue;
-    width: 100px;   
-    height: 100px;
-    margin: 10px;
-    font-size: 30px;
-    color: white;
-    text-align: left;
-    }
-    img {
-    margin: 5px;
-    }
-.team-container {
-  display: flex;  
-  justify-content: center;
+.products {
+  display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-}
-.card {
-  background: #f4f4f4;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0
-,0.1);
-  width: 250px;
-  text-align: center; 
-  padding: 20px;
-}
-.card img {
-  width: 100%;    
-  border-radius: 10px;
-}
-.card .role {
-  color: gray;
-  font-size: 14px;
-}
-.card .desc {
-  font-size: 16px;
-  margin: 15px 0;
-}
-.card button {
-  background: gray;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.card button:hover {
-  background: gray;
-}
-    img {
-    margin: 5px;
-    }
-    .contact-section {
-    padding: 60px;
 }
 
-.contact-section h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
+.product-card {
+  flex: 0 0 calc(25% - 20px);
+  margin: 10px;
+  text-align: center;
 }
 
-.contact-section p {
-    max-width: 800px;
-    color: #444;
+.product-card img {
+  width: 100%;
+}
+@media (max-width: 992px) {
+  .product-card {
+    flex: 0 0 calc(50% - 20px);
+  }
 }
 
-.contact-form {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+@media (max-width: 768px) {
+  body {
+    margin-left: 0;
+  }
+
+  #sidebar {
+    left: -250px;
+  }
+
+  .product-card {
+    flex: 0 0 100%;
+  }
 }
 
-.contact-form input {
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-.contact-form button {
-    padding: 12px;
-    border: none;
-    background: #444;
-    color: white;
-    cursor: pointer;
-}
-.contact-form button:hover {
-    background: #666;
-}
-:picker-icon {
-    color: black;
-    font-size: 24px;
-    margin-left: 10px;
-}
-
-
-        </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</style>
 </head>
 
 <body>
 
-  <div class="nav">
-    <div class="logo">BR Architects</div>
-    <div class="links">
-      <a href="#">Projects</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+<nav id="sidebar">
+  <div class="sidebar-header">LOGO</div>
+
+  <div class="menu">
+    <a href="#">Shirts</a>
+    <a href="#">Dresses</a>
+
+    <button class="dropdown-btn" onclick="toggleJeans()">
+      Jeans <i class="fa-solid fa-caret-down float-end"></i>
+    </button>
+
+    <div id="jeansMenu" class="submenu">
+      <a href="#"><i class="fa-solid fa-caret-right me-2"></i>Skinny</a>
+      <a href="#">Relaxed</a>
+      <a href="#">Bootcut</a>
+      <a href="#">Straight</a>
+    </div>
+
+    <a href="#">Jackets</a>
+    <a href="#">Gymwear</a>
+    <a href="#">Blazers</a>
+    <a href="#">Shoes</a>
+  </div>
+</nav>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">JEANS</span>
+
+    <div class="d-flex align-items-center gap-3">
+      <i class="fa-solid fa-cart-shopping text-white"></i>
+
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary">Search</button>
+      </form>
     </div>
   </div>
-  <div class="hero">
-    <img src="https://th.bing.com/th/id/OIP.X9NWSBKcw7uiZ4ihjO-Z7AHaEo?w=284&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+</nav>
 
-    <div class="hero-text">
-      <span class="box">BR</span> Architects
-    </div>
+<div class="position-relative">
+  <img src="https://www.w3schools.com/w3images/jeans.jpg"
+       class="w-100 hero-img">
+
+  <div class="position-absolute top-50 start-50 translate-middle hero-text text-white">
+    <h1 class="display-4 fw-bold">NEW ARRIVALS</h1>
+    <h3 class="display-6">COLLECTION 2026</h3>
+    <a href="#jeans" class="btn btn-dark btn-lg">SHOP NOW</a>
   </div>
-  <br>
-  <br><br><br>
-  <br>
-    <div class="flex-container2">
-       
-        <img src="https://www.w3schools.com/w3images/house5.jpg" alt="Mountain fjord landscape" width="100%" height="200px">
-       <BR>
-        <img src="https://www.w3schools.com/w3images/house2.jpg" alt="Mountain fjord landscape" width="100%" height="200px">
-       <BR>
-        <img src="https://www.w3schools.com/w3images/house3.jpg" alt="A scenic view of a mountain fjord landscape with lush greenery and a clear blue sky, conveying a sense of tranquility and natural beauty." width="100%" height="200px">
-        <br>
-        <img src="https://www.w3schools.com/w3images/house3.jpg" alt="A scenic view of a mountain fjord landscape with lush greenery and a clear blue sky, conveying a sense of tranquility and natural beauty." width="100%" height="200px">
-    </div>
-    <div class="flex-container2">
-       
-        <img src="https://www.w3schools.com/w3images/house5.jpg" alt="Mountain fjord landscape" width="100%" height="200px">
-       <BR>
-        <img src="https://www.w3schools.com/w3images/house2.jpg" alt="Mountain fjord landscape" width="100%" height="200px">
-       <BR>
-        <img src="https://www.w3schools.com/w3images/house3.jpg" alt="A scenic view of a mountain fjord landscape with lush greenery and a clear blue sky, conveying a sense of tranquility and natural beauty." width="100%" height="200px">
-        <br>
-        <img src="https://www.w3schools.com/w3images/house4.jpg" alt="Modern architectural house with clean lines set against a scenic mountain landscape, surrounded by natural greenery under an open sky, conveying contemporary design in harmony with nature." width="100%" height="200px">
-    </div>
-        <center><h3>Projects</h3></center>
-        <p><h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5></p>
-        <center></center><span class="box">BR</span> Architects</center>
-       <div class="team-container">
+</div>
 
-  <div class="card">
-    <img src="https://www.w3schools.com/w3images/team1.jpg" alt="John">
-    <h2>John Doe</h2>
-    <p class="role">CEO & Founder</p>
-    <p class="desc">
-      Phasellus eget enim eu lectus faucibus vestibulum.
-    </p>
-    <button>Contact</button>
+<div class="products p-3">
+
+  <div class="product-card">
+    <img src="https://www.w3schools.com/w3images/jeans1.jpg">
+    <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
   </div>
 
-  <div class="card">
-    <img src="https://www.w3schools.com/w3images/team2.jpg" alt="Jane">
-    <h2>Jane Doe</h2>
-    <p class="role">Architect</p>
-    <p class="desc">
-      Phasellus eget enim eu lectus faucibus vestibulum.
-    </p>
-    <button>Contact</button>
+  <div class="product-card">
+    <span class="badge bg-dark">NEW ARRIVAL</span>
+    <img src="https://www.w3schools.com/w3images/jeans2.jpg">
+    <p>Ripped Skinny Jeans<br><b>$14</b></p>
   </div>
 
-  <div class="card">
-    <img src="https://www.w3schools.com/w3images/team3.jpg" alt="Mike">
-    <h2>Mike Ross</h2>
-    <p class="role">Architect</p>
-    <p class="desc">
-      Phasellus eget enim eu lectus faucibus vestibulum.
-    </p>
-    <button>Contact</button>
+  <div class="product-card">
+    <img src="https://www.w3schools.com/w3images/jeans3.jpg">
+    <p>Ripped Skinny Jeans<br><b>$20.99</b></p>
   </div>
 
-  <div class="card">
-    <img src="https://www.w3schools.com/w3images/team4.jpg" alt="Dan">
-    <h2>Dan Star</h2>
-    <p class="role">Architect</p>
-    <p class="desc">
-      Phasellus eget enim eu lectus faucibus vestibulum.
-    </p>
-    <button>Contact</button>
+  <div class="product-card">
+    <img src="https://www.w3schools.com/w3images/jeans4.jpg">
+    <p>Ripped Skinny Jeans<br><b>$29.99</b></p>
   </div>
 
 </div>
- <div id="contact" class="contact-section">
-        <h2>Contact</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <input type="text" placeholder="Message/ Subject">
-            <input type="text" placeholder="Comments">
-            <button>SEND MESSAGE</button>
-        </form>
-            <button>SEND MESSAGE</button>
-        </form>
-    </div>
-    <img src="https://www.w3schools.com/w3images/map.jpg" alt="Map of the location" width="100%" height="600px">
-    <footer class="footer">
-  <center><p><h3>Follow Us</h3></p></center>
 
-  <center><div class="social-icons">
-    <i class="fab fa-instagram"></i>
-    <i class="fab fa-twitter"></i>
-    <i class="fab fa-facebook-f"></i>
-  </div></center>
+<div class="container mt-4">
+  <div class="p-5 bg-dark text-white rounded">
+    <h2>Subscribe</h2>
+    <p>To get special offers and VIP treatment:</p>
+    <input class="form-control mb-3" type="email" placeholder="Enter your email">
+    <button class="btn btn-danger">Subscribe</button>
+  </div>
+</div>
+<footer class="bg-dark text-white mt-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-4">
+                <h5><b>CONTACT</b></h5>
+                <form class="mt-3">
+                    <input class="form-control mb-2" type="text" placeholder="Name" required>
+                    <input class="form-control mb-2" type="email" placeholder="Email" required>
+                    <textarea class="form-control mb-2" rows="4" placeholder="Message" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <h5>About</h5>
+                <p><a href="#" class="text-white text-decoration-none">About us</a></p>
+                <p><a href="#" class="text-white text-decoration-none">We're hiring</a></p>
+                <p><a href="#" class="text-white text-decoration-none">Support</a></p>
+                <p><a href="#" class="text-white text-decoration-none">Find store</a></p>
+                <p><a href="#" class="text-white text-decoration-none">Shipment</a></p>
+                <p><a href="#" class="text-white text-decoration-none">Payment</a></p>
+                <p><a href="#" class="text-white text-decoration-none">Gift card</a></p>
+                <p><a href="#" class="text-white text-decoration-none">Return</a></p>
+                <p><a href="#" class="text-white text-decoration-none">Help</a></p>
+            </div>
+            <div class="col-md-4">
+                <h5>Store</h5>
+                <p><i class="fa fa-map-marker"></i> Company Name</p>
+                <p><i class="fa fa-phone"></i> 9876501123</p>
+                <p><i class="fa fa-envelope"></i> YOURGMAIL@mail.com</p>
+                <h5 class="mt-3">We accept</h5>
+                <p><i class="fa fa-cc-amex"></i> Amex</p>
+                <p><i class="fa fa-credit-card"></i> Credit Card</p>
+        <div class="mt-3">
+          <i class="fab fa-facebook-f me-3"></i>
+          <i class="fab fa-instagram me-3"></i>
+          <i class="fab fa-twitter me-3"></i>
+          <i class="fab fa-linkedin"></i>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </footer>
 
 </body>
