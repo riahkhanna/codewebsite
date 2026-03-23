@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+            E-mail V alidation
+        </title>
+
+    </head>
+    <body>
+        <script>
+
+        function validateemail()
+{
+            var x=document.myform.email.value;
+            var ata=x.indexOf("@");
+            var dotb=x.lastIndexOf(".");
+                 if (ata<1 || dotb<ata+2 || dotb+2>=x.length)
+{
+                alert("Please enter a valid e-mail address \correct ur email"+ata+"\n invalid email"+dotb);
+            return false;
+}
+}
+        </script>
+    <form name="myform" method="post" action="#" onsubmit="return validateemail();">
+    Email: <input type="text" name="email"><br/>
+    <input type="submit" value="register">
+    </form>
+
+    </body>
+    </html>

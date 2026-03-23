@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>INNER HTML</title>
+    </head>
+    <BODY>
+        <h4>THIS IS A SYNTAX OF INNERTEXT HTML.</h4>
+        <script>
+            function validate()
+            {
+                var msg;
+                    if(document.myForm.userPass.value.length>4){
+                    msg="good";
+            }
+            else{
+                msg="poor";
+            }
+            document.getElementById('mylocation').innerText=msg;
+}
+        </script>
+        <form name="myForm">
+            <input type="password" value="" name="userPass" onkeyup="validate()">
+             Strength:<span id="mylocation">no strength</span>
+    </BODY>
+</html>

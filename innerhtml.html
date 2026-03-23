@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>form by inner html</title>
+    </head>
+    <body>
+        <script>
+            function FORM() {
+                let data="Name:<br><input type='text' name='name'><br>Your Comment:<br><textarea rows='10' cols='100'> </textarea><br><input type='submit' value='Submit'>";
+                 document.getElementById('mylocation').innerHTML=data;
+}
+</script>
+<form name="My Form">
+    <input type="button" value="FORM" onclick="FORM()">
+    <div id="mylocation"></div>
+
+</form>
+
+
+
+
+        </script>
+    </body>
+</html>

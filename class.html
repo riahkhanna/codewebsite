@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>CSS Class Example</title>
-        <style>     {         
-                background-color : lightyellow;
-          }
-                  .demo   {           
-                 
-            color: blue;
-            font-size: 20px;
-            text-align: center;
-        }
-            
-        </style>
-    </head>
-    <body>
-      
-        <p class="demo">This paragraph is styled using a CSS class.</p>
-        <p class="demo">This paragraph is also styled using the CSS class.</p>
+<head>
+    <title>CLASS JS</title>
+</head>
+<body>
 
+<script>
+class Element {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
 
-    </body>
+    detail() {
+        document.write(this.id + " " + this.name + "<br/>");
+    }
+}
+
+var x = new Element(401, "RIAH KHANNA");
+var y = new Element(302, "RIYA KHANNA");
+var z = new Element(503, "RHEA KHANNA");
+
+x.detail();
+y.detail();
+z.detail();
+</script>
+
+</body>
 </html>

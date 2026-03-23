@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            ElementByName
+        </title>
+    </head>
+    <script>
+
+       function totalelements()
+ {
+ var allelements=document.getElementsByName("element");
+ alert("Total Elements:"+allelements.length);
+ }
+</script>
+<form>
+Element1:<input type="checkboxm" name="element" value="element1">
+Element2:<input type="radio" name="element" value="element2">
+Element3:<input type="radio" name="element" value="element3">
+Element4:<input type="radio" name="element" value="element4">
+Element5:<input type="radio" name="element" value="element5">
+Element6:<input type="radio" name="element" value="element6">
+Element7:<input type="radio" name="element" value="element7">
+Element8:<input type="radio" name="element" value="element8">
+Element9:<input type="radio" name="element" value="element9">
+Element10:<input type="radio" name="element" value="element10">
+<input type="button" onclick="totalelements()" value="Total Elements">
+</form>
+</html>
