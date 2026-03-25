@@ -1,0 +1,41 @@
+body{
+    background-color: brown;
+}
+
+.container{
+    width: 360px;
+    padding: 33px;
+    text-align: center;
+    background-color: beige;
+    margin: 33%;
+    margin-top: 250px;
+}
+
+input{
+    width: 200px;
+    height: 42px;
+    color: darkslategrey;
+    cursor: pointer;
+    outline: none;
+    border-radius: 2px;
+    font-size: 22px;
+}
+
+button{
+    width: 80px;
+    height: 42px;
+    background-color: black;
+    color: darkolivegreen;
+    cursor: pointer;
+    border-radius: 2px;
+    font-size: 18px;
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: lightgray;
+    padding: 10px;
+    margin-top: 10px;
+}
